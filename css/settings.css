@@ -1,0 +1,36 @@
+
+#settings-icon {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  width: 40px;
+}
+#settings-panel {
+  position: fixed;
+  top: 70px;
+  left: 20px;
+  width: 220px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  padding: 15px;
+  display: none;
+  z-index: 1000;
+  font-family: 'ZCOOL KuaiLe', cursive;
+}
+#settings-panel h3 {
+  margin: 10px 0 5px;
+  font-size: 16px;
+}
+#settings-panel button, select {
+  width: 100%;
+  margin: 4px 0;
+  padding: 6px;
+  border: none;
+  border-radius: 10px;
+  background: #ffd6e0;
+  font-weight: bold;
+  cursor: pointer;
+}

@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mingle Map Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="css/settings.css">
+</head>
+<body style="margin:0; font-family: 'ZCOOL KuaiLe', cursive;">
+  <img id="settings-icon" src="img/settings-icon.png" onclick="toggleSettings()" />
+  <div id="settings-panel">
+    <h3>Language</h3>
+    <button onclick="setLang('en')">English</button>
+    <button onclick="setLang('zh')">中文</button>
+    <button onclick="setLang('kr')">한국어</button>
+    <button onclick="setLang('jp')">日本語</button>
+    <h3>Music</h3>
+    <input type="range" min="0" max="1" step="0.05" value="1" onchange="setVolume(this.value)" />
+    <button onclick="toggleMusic()">Play / Pause</button>
+  </div>
+
+  <h1 style="text-align:center;margin-top:100px;">Welcome to Mingle Treasure Map</h1>
+  <div style="text-align:center;">
+    <a href="treasure.html"><button style="padding:12px 24px;margin:10px;">Treasure Map</button></a>
+    <a href="draw-vote.html"><button style="padding:12px 24px;margin:10px;">Color & Vote</button></a>
+    <a href="ranking.html"><button style="padding:12px 24px;margin:10px;">Leaderboard</button></a>
+  </div>
+
+  <audio id="bg-music" src="audio/hi.mp3" autoplay loop></audio>
+  <script src="js/settings.js"></script>
+</body>
+</html>

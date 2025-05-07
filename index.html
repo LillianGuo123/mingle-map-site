@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mingle Map - Dreamcore Start</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #f0f8ff;
+    }
+    img.fullscreen {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0; left: 0;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <img class="fullscreen" id="splash" src="img/start1.jpeg" />
+  <div class="overlay" onclick="location.href='home.html'"></div>
+  <script>
+    const total = 8;
+    let i = 1;
+    setInterval(() => {
+      i = i % total + 1;
+      document.getElementById('splash').src = 'img/start' + i + '.jpeg';
+    }, 500);
+  </script>
+</body>
+</html>
