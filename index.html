@@ -1,40 +1,76 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mingle Map - Dreamcore Start</title>
+  <meta charset="UTF-8">
+  <title>Mingle Map Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       margin: 0;
-      overflow: hidden;
-      background: #f0f8ff;
+      font-family: sans-serif;
+      background: url('img/bg.jpg') no-repeat center center fixed;
+      background-size: cover;
     }
-    img.fullscreen {
-      position: absolute;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-    }
-    .overlay {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0; left: 0;
+    .btn {
+      display: inline-block;
+      margin: 20px;
+      padding: 20px 40px;
+      font-size: 18px;
+      background: pink;
+      border: 2px dashed #fff;
+      border-radius: 20px;
       cursor: pointer;
+    }
+    .center {
+      text-align: center;
+      margin-top: 20%;
+    }
+    #settings-icon {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 40px;
+      cursor: pointer;
+    }
+    #settings-panel {
+      display: none;
+      position: fixed;
+      top: 80px;
+      left: 20px;
+      background: rgba(255,255,255,0.9);
+      padding: 15px;
+      border-radius: 12px;
     }
   </style>
 </head>
 <body>
-  <img class="fullscreen" id="splash" src="img/start1.jpeg" />
-  <div class="overlay" onclick="location.href='home.html'"></div>
+  <img id="settings-icon" src="img/settings.png" onclick="toggleSettings()">
+  <div id="settings-panel">
+    <h3>Language</h3>
+    <button onclick="alert('Set to English')">EN</button>
+    <button onclick="alert('切换为中文')">中文</button>
+    <h3>Music</h3>
+    <button onclick="toggleMusic()">Play / Pause</button>
+  </div>
+
+  <div class="center">
+    <a href="treasure.html" class="btn">Treasure Map</a>
+    <a href="draw-vote.html" class="btn">Color & Vote</a>
+    <a href="ranking.html" class="btn">Leaderboard</a>
+  </div>
+
+  <audio id="bg-music" src="audio.mp3" autoplay loop></audio>
+
   <script>
-    const total = 8;
-    let i = 1;
-    setInterval(() => {
-      i = i % total + 1;
-      document.getElementById('splash').src = 'img/start' + i + '.jpeg';
-    }, 500);
+    function toggleSettings() {
+      const p = document.getElementById('settings-panel');
+      p.style.display = p.style.display === 'block' ? 'none' : 'block';
+    }
+    function toggleMusic() {
+      const audio = document.getElementById('bg-music');
+      audio.paused ? audio.play() : audio.pause();
+    }
   </script>
 </body>
 </html>
